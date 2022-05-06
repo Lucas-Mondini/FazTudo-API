@@ -4,7 +4,7 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 
-	router "fazTudo-API/routes"
+	"fazTudo-API/routes"
 )
 
 func main() {
@@ -14,10 +14,10 @@ func main() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
-	println(e)
+	//e.Use(middleware.CORS())
 
-	router.LoadAllRoutes(e)
+	routes.LoadAllRoutes(e)
 
 	// Start server
-	e.Logger.Fatal(e.Start(":9090"))
+	e.Logger.Fatal(e.Start(":9191"))
 }
